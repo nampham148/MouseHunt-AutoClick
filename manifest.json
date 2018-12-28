@@ -42,15 +42,6 @@
         "/js/jquery/jquery.js",
         "/src/page_action/page_action.js"        
       ]
-    },
-    {
-      "matches": [
-        "https://www.google.com/search?ei=uN4lXMqxJsKgsQXQ-5mwAg&q=googlce+click&oq=googlce+click&gs_l=psy-ab.3..0i13l4j0i13i10j0i13l5.4317.6129..6403...0.0..0.107.1045.12j1......0....1..gws-wiz.......0j0i71j35i39j0i67j0i20i263j0i10.kuQ1SiyNqQo"
-      ],
-      "js": [
-        "/js/jquery/jquery.js",
-        "/src/page_action/button_press.js"
-      ]
     }
   ]
 }
