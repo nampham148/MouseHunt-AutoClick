@@ -1,6 +1,6 @@
 {
   "name": "MouseHunt Autoclick",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "This is an autoclick for horn hunting at mousehuntgame.com",
   "homepage_url": "http://extensionizr.com",
@@ -40,6 +40,7 @@
       ],
       "js": [
         "/js/jquery/jquery.js",
+        "/src/page_action/captcha.js",
         "/src/page_action/page_action.js"        
       ]
     }
