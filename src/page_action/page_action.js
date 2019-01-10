@@ -1,6 +1,6 @@
 // Go hunt!
 function hunt() {
-  var waitTime =  Math.floor(Math.random() * 90);
+  var waitTime =  Math.floor(Math.random() * 60) + 10;
   console.log("Hunting... but wait:", waitTime);
   setTimeout(function() {
     console.log("Sounding the horn!");
@@ -9,25 +9,6 @@ function hunt() {
     // wait 5 seconds for the DOM to update before checking captcha
     setTimeout(checkCaptcha, 5000);   
   }, waitTime * 1000);
-}
-
-// check whether we hit king's reward (to be worked on)
-function checkCaptcha() {
-  var timeLeft = $("#huntTimer").text();
-  console.log("-------------");
-  console.log(timeLeft);
-  if (timeLeft == "Ready!") {
-    // hit the captcha
-    console.log("Stop now");
-
-    // handle the captcha (just hunt for now)
-    setTimeout(hunt, 15*60*1000);
-  } else {
-    // keep hunting
-    var wait = convertToMilisec(timeLeft);
-    console.log("go next: ", wait);
-    setTimeout(hunt, wait);
-  }
 }
 
 // convert from time format mm:ss to miliseconds
@@ -42,8 +23,15 @@ $(document).ready(() => {
   var timeLeft = $("#huntTimer").text();
   console.log(timeLeft);
   if (timeLeft == "Ready!") {
-    hunt()
+    if ($(".mousehuntPage-puzzle-form-captcha-image")[0]){
+      // hit the captcha
+      solveCaptcha();
+    } else {
+      // hunt normally
+      hunt();
+    }
   } else {
+    // wait till horn is available
     var wait = convertToMilisec(timeLeft);
     console.log(wait);
     setTimeout(hunt, wait);
